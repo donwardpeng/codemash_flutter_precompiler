@@ -2,7 +2,7 @@
 
 Flutter is Google's cross-platform development framework for quickly crafting high-quality native apps on Web, iOS, Android and ChromeOS in record time. During this session we will be covering what Flutter is, and how to develop using it. The good news - no experience with Flutter is needed for this session. 
  
-Follow the steps below to prepare for this session at Codemash 2019.
+Follow the steps below to prepare for this session at Codemash 2020.
 
 1. **Install the Flutter SDK.** 
 The Flutter documentation is excellent and has detailed instructions for installation on Windows, macOS, and Linux. Follow the documentation [here](https://flutter.dev/docs/get-started/install) to install Flutter on your computer.  
