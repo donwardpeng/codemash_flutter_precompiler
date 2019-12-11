@@ -1,4 +1,6 @@
-# Codemash 2019 Precompiler Session - Bringing ML to Mobile Apps - Let's build an app to perform Face Recognition using Flutter
+## Codemash 2019 Precompiler Session - Bringing ML to Mobile Apps - Let's build an app to perform Face Recognition using Flutter
+
+### What's this Session About?
 
 Flutter is Google’s cross-platform development framework for quickly crafting high-quality native apps on Web, iOS, Android, and ChromeOS in record time.
 
@@ -6,7 +8,7 @@ Flutter works with existing code, is used by developers and organizations around
 
 Firebase is Google's set of back-end services for mobile developers to quickly build out mobile apps for both Android and iOS. It is a set of 17 services that currently support 1.5 million mobile apps. The services range from Push Notifications, and Remote Configuration, all the way to supporting best in class Machine Learning models for use in mobile apps.
 
-To illustrate how powerful the combination of Flutter and Firebase is, we will be building a cross-platform mobile app to perform face-recognition in real-time from the device's camera.
+To illustrate how powerful the combination of Flutter and Firebase is, **we will be building a cross-platform mobile app to perform face-recognition in real-time from the device's camera.**
 
 In this workshop we will develop this app using one codebase written in Flutter hooking into Firebase's APIs. Face recognition will be performed using a pre-built machine learning model built by Google and provided within Firebase. This machine learning model will run on the mobile device providing real-time detection with no network latency. The mobile app we will build can easily be extended to support many other types of Machine Learning models including custom models.
 
