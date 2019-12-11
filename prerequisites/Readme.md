@@ -1,4 +1,4 @@
-## Pre-requisites for the Codemash Precompiler session - Bringing ML to Mobile Apps - Let's build an app to perform Face Recognition using Flutter
+## Prerequisites for the Codemash Precompiler session - Bringing ML to Mobile Apps - Let's build an app to perform Face Recognition using Flutter
 
 Flutter is Google's cross-platform development framework for quickly crafting high-quality native apps on Web, iOS, Android and ChromeOS in record time. During this session we will be covering what Flutter is, and how to develop using it. The good news - no experience with Flutter is needed for this session. 
  

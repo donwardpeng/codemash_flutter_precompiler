@@ -16,7 +16,7 @@ This repo has all of the material covered during the Codemash 2020 Precompiler s
 
 ## Here is what is included in this repo:
 
-1. [Pre-requisites](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/pre-requisites) - Start here to set up and install all of the pre-requisites to develop a Flutter app.
+1. [Prerequisites](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/pre-requisites) - **Start here** to set up and install all of the prerequisites to develop a Flutter app.
 2. [The Slide Deck](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/slidedeck) - Want to follow along at home? -> the entire slide deck used is here.
 3. [The Codebase - Step by Step](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/step_by_step_codebase) - this directory contains the codebase used during the precompiler saved step by step.
 4. [The Final Codebase](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/final_codebase) - This is the entire enchilada, the finished product for you to review and work with.
