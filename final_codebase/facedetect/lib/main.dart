@@ -51,28 +51,28 @@ class _MyHomePageState extends State<MyHomePage> {
 /* back button handler */
   Future<bool> _onWillPop() {
     return showDialog(
-      context: context,
-      builder: (context) => new AlertDialog(
-        title: new Text('Are you sure?'),
-        content: new Text('Do you want to exit the App?'),
-        actions: <Widget>[
-          new FlatButton(
-            onPressed: () {
-              setState(() {
-                _imageFile = null;
-                _imageSize = null;
-              });
-              Navigator.of(context).pop(false);
-            },
-            child: new Text('No'),
+          context: context,
+          builder: (context) => new AlertDialog(
+            title: new Text('Are you sure?'),
+            content: new Text('Do you want to exit the App?'),
+            actions: <Widget>[
+              new FlatButton(
+                onPressed: () {
+                  setState(() {
+                    _imageFile = null;
+                    _imageSize = null;
+                  });
+                  Navigator.of(context).pop(false);
+                },
+                child: new Text('No'),
+              ),
+              new FlatButton(
+                onPressed: () => Navigator.of(context).pop(true),
+                child: new Text('Yes'),
+              ),
+            ],
           ),
-          new FlatButton(
-            onPressed: () => Navigator.of(context).pop(true),
-            child: new Text('Yes'),
-          ),
-        ],
-      ),
-    ) ??
+        ) ??
         false;
   }
 
@@ -89,7 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
         maxWidth: 1000,
         maxHeight: 1000);
 
-    print('here');
     if (imageFile != null) {
       _getImageSize(imageFile);
       _scanImage(imageFile);
@@ -131,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     final FirebaseVisionImage visionImage =
-    FirebaseVisionImage.fromFile(imageFile);
+        FirebaseVisionImage.fromFile(imageFile);
 
     dynamic results;
     switch (_currentDetector) {
@@ -171,27 +170,37 @@ class _MyHomePageState extends State<MyHomePage> {
     return Stack(children: <Widget>[
       Positioned.fill(
           child: Container(
-            constraints: BoxConstraints.expand(),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: Image.file(_imageFile).image,
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            child: _imageSize == null || _scanResults == null
-                ? const Center(child: CircularProgressIndicator())
-                : _buildResults(_imageSize, _scanResults),
-          )),
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: Image.file(_imageFile).image,
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        child: _imageSize == null || _scanResults == null
+            ? const Center(child: CircularProgressIndicator())
+            : _buildResults(_imageSize, _scanResults),
+      )),
       Positioned(
           bottom: 25,
           width: MediaQuery.of(context).size.width,
           child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
+
               children: <Widget>[
                 RaisedButton(
                   child: Text('Save Image'),
                   onPressed: () {},
+                ),
+                RaisedButton(
+                  child: Text('Back'),
+                  onPressed: () {
+                    setState(() {
+                      _imageFile = null;
+                      _scanResults = null;
+                    });
+                  },
                 )
               ]))
     ]);
@@ -207,21 +216,36 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: _imageFile == null
             ? Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('No image selected.'),
-                  RaisedButton(
-                      child: Text("Detect Faces from Gallery Image"),
-                      onPressed: () {
-                        _getAndScanImage(selectedFromCamera: false);
-                      }),
-                  RaisedButton(
-                      child: Text("Detect Faces from Camera"),
-                      onPressed: () {
-                        _getAndScanImage(selectedFromCamera: true);
-                      })
-                ]))
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                    Container(
+                        padding: EdgeInsets.all(16),
+                        color: Colors.blue,
+                        constraints: BoxConstraints.expand(
+                            width: MediaQuery.of(context).size.width,
+                            height: 225),
+                        child: Column(children: <Widget>[
+                          Text('Detect Faces',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 32)),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                          ),
+                          RaisedButton(
+                              child: Text("Detect Faces from Gallery Image",
+                                  style: TextStyle(fontSize: 20)),
+                              onPressed: () {
+                                _getAndScanImage(selectedFromCamera: false);
+                              }),
+                          RaisedButton(
+                              child: Text("Detect Faces from Camera",
+                                  style: TextStyle(fontSize: 20)),
+                              onPressed: () {
+                                _getAndScanImage(selectedFromCamera: true);
+                              })
+                        ]))
+                  ]))
             : _buildImage(),
       ),
       onWillPop: _onWillPop,
