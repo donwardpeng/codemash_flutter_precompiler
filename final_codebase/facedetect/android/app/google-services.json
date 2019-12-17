@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "574057435029",
+    "firebase_url": "https://face-detector-3febd.firebaseio.com",
+    "project_id": "face-detector-3febd",
+    "storage_bucket": "face-detector-3febd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574057435029:android:7cfa6e6e85bd191950f09c",
+        "android_client_info": {
+          "package_name": "com.example.facedetect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574057435029-1hcov0if1122gphevk2m45uf604dtosv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2ORyT4biHTI5sRv6mzCx95K8KYd-hmGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574057435029-1hcov0if1122gphevk2m45uf604dtosv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "574057435029-2bgbm0mu7m547tqgmrbkmbj5gu4mh6q0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.facedetect"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574057435029:android:a716d91bfbb77dda50f09c",
+        "android_client_info": {
+          "package_name": "com.example.thefacedetector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574057435029-1hcov0if1122gphevk2m45uf604dtosv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2ORyT4biHTI5sRv6mzCx95K8KYd-hmGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574057435029-1hcov0if1122gphevk2m45uf604dtosv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "574057435029-2bgbm0mu7m547tqgmrbkmbj5gu4mh6q0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.facedetect"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
