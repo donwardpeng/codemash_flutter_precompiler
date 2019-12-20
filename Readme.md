@@ -20,4 +20,4 @@ This repo has all of the material covered during the Codemash 2020 Precompiler s
 2. [The Slide Deck](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/slidedeck) - Want to follow along at home? -> the entire slide deck used is here.
 3. [The Codebase - Step by Step](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/step_by_step_codebase) - this directory contains the codebase used during the precompiler saved step by step.
 4. [The Final Codebase](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/final_codebase) - This is the entire enchilada, the finished product for you to review and work with.
-5. [Extras](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/extras) - Extra links and resources that you may wish to check out.
+5. [Extras](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/extras) - Extra links and resources on Flutter and Dart.
