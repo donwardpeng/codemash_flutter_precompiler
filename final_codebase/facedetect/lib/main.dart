@@ -5,6 +5,8 @@ import 'detector_painters.dart';
 import 'dart:io';
 import 'dart:async';
 import 'dart:ui';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:screenshot/screenshot.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mode: FaceDetectorMode.fast,
           enableLandmarks: true,
           enableContours: true));
+  ScreenshotController screenshotController = ScreenshotController();
 
 /* back button handler */
   Future<bool> _onWillPop() {
@@ -169,7 +172,9 @@ class _MyHomePageState extends State<MyHomePage> {
     print('_buildImage method called');
     return Stack(children: <Widget>[
       Positioned.fill(
-          child: Container(
+          child: Screenshot(
+        controller: screenshotController,
+        child: Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -180,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: _imageSize == null || _scanResults == null
             ? const Center(child: CircularProgressIndicator())
             : _buildResults(_imageSize, _scanResults),
-      )),
+      ))),
       Positioned(
           bottom: 25,
           width: MediaQuery.of(context).size.width,
