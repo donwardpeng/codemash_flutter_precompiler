@@ -8,10 +8,11 @@ import 'dart:ui';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:screenshot/screenshot.dart';
 
+// main method
 void main() => runApp(MyApp());
 
+// MyApp class for the app - root of the application
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,36 +20,39 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: MyHomePage(title: 'Face Detection Demo'),
+      // set the only route for the app - you could add more here
       initialRoute: '/',
       routes: {
-        // When navigating to the "/" route, build the MyHomePage widget.
-        '/': (context) => MyHomePage(title: 'Face Detection Demo'),
-        // When navigating to the "/second" route, build the SecondScreen widget.
-        //'/faceDetectCamera': (context) => FaceDetectScreen(),
+        '/': (context) => FirstScreen(title: 'Face Detection Demo'),
       },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+// First Screen extends the StatefulWidget class
+class FirstScreen extends StatefulWidget {
+  FirstScreen({Key key, this.title}) : super(key: key);
+  // title string
   final String title;
-
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _FirstScreenState createState() => _FirstScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+// State for the First Screen
+class _FirstScreenState extends State<FirstScreen> {
   File _imageFile;
   Size _imageSize;
   dynamic _scanResults;
-  Detector _currentDetector = Detector.text;
+  Detector _currentDetector = Detector.face;
+
+  // setup the face detector instance for FirebaseVision with options
   final FaceDetector _faceDetector = FirebaseVision.instance.faceDetector(
       FaceDetectorOptions(
           mode: FaceDetectorMode.fast,
           enableLandmarks: true,
           enableContours: true));
+
+  // declare the screenshot controller to grab a screenshot of the screen when saving the image
   ScreenshotController screenshotController = ScreenshotController();
 
 /* back button handler */
@@ -96,11 +100,9 @@ class _MyHomePageState extends State<MyHomePage> {
       _getImageSize(imageFile);
       _scanImage(imageFile);
     }
-    print('here1');
 
     setState(() {
       _imageFile = imageFile;
-      print('here2');
     });
   }
 

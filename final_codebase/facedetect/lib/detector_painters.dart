@@ -82,27 +82,6 @@ class FaceDetectorPainter extends CustomPainter {
             false,
             blackLine);
       }
-
-          // Offset baseOfNoseShifted = Offset(baseOfNoseXShifted, baseOfNoseYShifted);
-//      double topOfRectForArc = baseOfNoseYShifted -
-//          ((face.boundingBox.bottom * scaleY + yShift) - baseOfNoseYShifted) /
-//              2;
-//      double bottomOfRectForArc = face.boundingBox.bottom * scaleY +
-//          yShift -
-//          ((face.boundingBox.bottom * scaleY + yShift) - baseOfNoseYShifted) /
-//              2;
-//      canvas.drawArc(
-//          Rect.fromLTRB(
-//              baseOfNoseXShifted,
-//              topOfRectForArc,
-//              face.boundingBox.right * scaleX,
-//              bottomOfRectForArc),
-//          (0.5 * pi),
-//          (0.5 * pi),
-//          false,
-//          blackLine);
-
-
       canvas.drawRect(
         Rect.fromLTRB(
           face.boundingBox.left * scaleX,
