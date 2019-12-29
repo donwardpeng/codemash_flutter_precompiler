@@ -24,21 +24,21 @@ class FaceDetectorPainter extends CustomPainter {
         (((absoluteImageSize.width / absoluteImageSize.aspectRatio) * scaleY) /
             2);
 
-
+    // redline is used for the rectangle around the detected face
     final Paint redLine = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.0
       ..color = Colors.red;
 
+    // blackline is used to draw the mustache on the face
     double mustacheStroke = (absoluteImageSize.aspectRatio > 1) ? 5 : 12;
-    print('absoluteImageSize.aspectRatio = ' + absoluteImageSize.aspectRatio.toString());
-    print('mustache stroke = ' + mustacheStroke.toString());
-
     final Paint blackLine = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = mustacheStroke
       ..color = Colors.black54;
 
+    // draw a rectangle with the redline painter around each face, as
+    // well as draw a mustache on each face found
     for (Face face in faces) {
       Offset baseOfNose = face.getLandmark(FaceLandmarkType.noseBase).position;
       FaceContour leftEye = face.getContour(FaceContourType.leftEye);
@@ -82,6 +82,8 @@ class FaceDetectorPainter extends CustomPainter {
             false,
             blackLine);
       }
+
+      // draw the rectangle around the face
       canvas.drawRect(
         Rect.fromLTRB(
           face.boundingBox.left * scaleX,
