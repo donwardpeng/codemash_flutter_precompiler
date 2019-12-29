@@ -43,7 +43,6 @@ class _FirstScreenState extends State<FirstScreen> {
   File _imageFile;
   Size _imageSize;
   dynamic _scanResults;
-  Detector _currentDetector = Detector.face;
 
   // setup the face detector instance for FirebaseVision with options
   final FaceDetector _faceDetector = FirebaseVision.instance.faceDetector(
@@ -138,13 +137,7 @@ class _FirstScreenState extends State<FirstScreen> {
         FirebaseVisionImage.fromFile(imageFile);
 
     dynamic results;
-    switch (_currentDetector) {
-      case Detector.face:
-        results = await _faceDetector.processImage(visionImage);
-        break;
-      default:
-        return;
-    }
+    results = await _faceDetector.processImage(visionImage);
 
     setState(() {
       _scanResults = results;
@@ -155,14 +148,7 @@ class _FirstScreenState extends State<FirstScreen> {
   CustomPaint _buildResults(Size imageSize, dynamic results) {
     print('_buildResults method called');
     CustomPainter painter;
-
-    switch (_currentDetector) {
-      case Detector.face:
-        painter = FaceDetectorPainter(_imageSize, results);
-        break;
-      default:
-        break;
-    }
+    painter = FaceDetectorPainter(_imageSize, results);
 
     return CustomPaint(
       painter: painter,
@@ -194,7 +180,6 @@ class _FirstScreenState extends State<FirstScreen> {
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
-
               children: <Widget>[
                 RaisedButton(
                   child: Text('Save Image'),
@@ -213,9 +198,9 @@ class _FirstScreenState extends State<FirstScreen> {
     ]);
   }
 
+  // the build method to draw the entire screen
   @override
   Widget build(BuildContext context) {
-    _currentDetector = Detector.face;
     return WillPopScope(
       child: Scaffold(
         appBar: AppBar(
@@ -259,6 +244,7 @@ class _FirstScreenState extends State<FirstScreen> {
     );
   }
 
+  // clean up
   @override
   void dispose() {
     _faceDetector.close();
