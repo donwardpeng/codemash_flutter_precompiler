@@ -6,7 +6,8 @@
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
 
-    <!-- Add these permissions to the app to allow the camera and gallery image picker-->
+    <!-- Add these permissions before the <application> tag in the AndroidManifest to
+     allow the camera and gallery image picker-->
     <uses-feature android:name="android.hardware.camera" android:required="true" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

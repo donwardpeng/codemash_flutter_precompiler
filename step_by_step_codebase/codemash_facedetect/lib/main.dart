@@ -34,7 +34,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   File _imageFile;
   Size _imageSize;
-  dynamic _scanResults;
 
 /* _getAndScanImage method */
   Future<void> _getAndScanImage({bool selectedFromCamera}) async {
@@ -58,6 +57,43 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+/* _buildImage() method - build the image to display in body of the app */
+  Widget _buildImage() {
+    print('_buildImage method called');
+    return Stack(children: <Widget>[
+      Positioned.fill(
+          child: Container(
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: Image.file(_imageFile).image,
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+      )),
+      Positioned(
+          bottom: 25,
+          width: MediaQuery.of(context).size.width,
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('Save Image'),
+                  onPressed: () {},
+                ),
+                RaisedButton(
+                  child: Text('Back'),
+                  onPressed: () {
+                    setState(() {
+                      _imageFile = null;
+                    });
+                  },
+                )
+              ]))
+    ]);
+  }
+
   // the build method to draw the entire screen
   @override
   Widget build(BuildContext context) {
@@ -65,7 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Center(
+        body: _imageFile == null
+            ? Center(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -96,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               })
                         ]))
                   ]))
-            
+            : _buildImage(),
       );
   }
 }
