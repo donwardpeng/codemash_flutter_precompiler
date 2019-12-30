@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
+import 'dart:async';
+import 'dart:ui';
 
 // main method
 void main() => runApp(MyApp());
@@ -28,6 +32,31 @@ class MyHomePage extends StatefulWidget {
 
 // State for the First Screen
 class _MyHomePageState extends State<MyHomePage> {
+  File _imageFile;
+  Size _imageSize;
+  dynamic _scanResults;
+
+/* _getAndScanImage method */
+  Future<void> _getAndScanImage({bool selectedFromCamera}) async {
+    print('_getAndScanImage method called');
+    setState(() {
+      _imageFile = null;
+      _imageSize = null;
+    });
+
+    final File imageFile = await ImagePicker.pickImage(
+        source: selectedFromCamera ? ImageSource.camera : ImageSource.gallery,
+        maxWidth: 1000,
+        maxHeight: 1000);
+
+    if (imageFile != null) {
+      // need to do something with the selected image file
+    }
+
+    setState(() {
+      _imageFile = imageFile;
+    });
+  }
 
   // the build method to draw the entire screen
   @override
@@ -57,16 +86,17 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text("Detect Faces from Gallery Image",
                                   style: TextStyle(fontSize: 20)),
                               onPressed: () {
-                                // add code to handle detecting faces from the Gallery here
+                                _getAndScanImage(selectedFromCamera: false);
                               }),
                           RaisedButton(
                               child: Text("Detect Faces from Camera",
                                   style: TextStyle(fontSize: 20)),
                               onPressed: () {
-                                // add code to handle detecting faces from the Camera here
+                                _getAndScanImage(selectedFromCamera: true);
                               })
                         ]))
-                  ]))            
+                  ]))
+            
       );
   }
 }
