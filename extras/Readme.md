@@ -14,6 +14,12 @@
 
 <a href="https://pub.dev/packages/flutter_launcher_icons">Flutter Launcher Icons Plugin</a>
 
+## Flutter CustomPaint class documentation
+
+<a href="https://api.flutter.dev/flutter/widgets/CustomPaint-class.html">Flutter CustomPaint Class Documentation</a>
+
 ## Firebase MLVision
+
+<a href="https://pub.dev/packages/firebase_ml_vision">Flutter Firebase MLVision Plugin</a>
 
 <a href="https://github.com/FirebaseExtended/flutterfire/tree/master/packages/firebase_ml_vision/example">Flutter MLVision Example App</a>

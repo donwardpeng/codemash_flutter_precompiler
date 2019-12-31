@@ -20,26 +20,22 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // set the only route for the app - you could add more here
-      initialRoute: '/',
-      routes: {
-        '/': (context) => FirstScreen(title: 'Face Detection Demo'),
-      },
+    home: MyHomePage(title: 'Face Detection Demo'),
     );
   }
 }
 
 // First Screen extends the StatefulWidget class
-class FirstScreen extends StatefulWidget {
-  FirstScreen({Key key, this.title}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
   // title string
   final String title;
   @override
-  _FirstScreenState createState() => _FirstScreenState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 // State for the First Screen
-class _FirstScreenState extends State<FirstScreen> {
+class _MyHomePageState extends State<MyHomePage> {
   File _imageFile;
   Size _imageSize;
   dynamic _scanResults;
@@ -53,34 +49,6 @@ class _FirstScreenState extends State<FirstScreen> {
 
   // declare the screenshot controller to grab a screenshot of the screen when saving the image
   ScreenshotController screenshotController = ScreenshotController();
-
-/* back button handler */
-  Future<bool> _onWillPop() {
-    return showDialog(
-          context: context,
-          builder: (context) => new AlertDialog(
-            title: new Text('Are you sure?'),
-            content: new Text('Do you want to exit the App?'),
-            actions: <Widget>[
-              new FlatButton(
-                onPressed: () {
-                  setState(() {
-                    _imageFile = null;
-                    _imageSize = null;
-                  });
-                  Navigator.of(context).pop(false);
-                },
-                child: new Text('No'),
-              ),
-              new FlatButton(
-                onPressed: () => Navigator.of(context).pop(true),
-                child: new Text('Yes'),
-              ),
-            ],
-          ),
-        ) ??
-        false;
-  }
 
 /* _getAndScanImage method */
   Future<void> _getAndScanImage({bool selectedFromCamera}) async {
@@ -201,8 +169,7 @@ class _FirstScreenState extends State<FirstScreen> {
   // the build method to draw the entire screen
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      child: Scaffold(
+    Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
         ),
@@ -239,9 +206,7 @@ class _FirstScreenState extends State<FirstScreen> {
                         ]))
                   ]))
             : _buildImage(),
-      ),
-      onWillPop: _onWillPop,
-    );
+      );
   }
 
   // clean up
