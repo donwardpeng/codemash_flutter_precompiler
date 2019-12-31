@@ -4,6 +4,8 @@ In this section are links to relevant information for the precompiler session. S
 
 ## Articles to get started with Flutter
 
+<a href="https://arstechnica.com/gadgets/2015/05/googles-dart-language-on-android-aims-for-java-free-120-fps-apps/">Where did Flutter come from?</a>
+
 <a href="https://flutter.dev/docs/resources/technical-overview">Flutter Technical Overview Documentation</a>
 
 <a href="https://hackernoon.com/whats-revolutionary-about-flutter-946915b09514">What's Revolutionary about Flutter</a>
