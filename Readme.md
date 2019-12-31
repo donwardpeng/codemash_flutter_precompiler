@@ -14,11 +14,11 @@ In this workshop we will develop this app using one codebase written in Flutter 
 
 This repo has all of the material covered during the Codemash 2020 Precompiler session on building a Face Recognition system using Flutter.
 
-## How to use this repo
+## How to use this Repository
 
-The best way to use this repo during the session is to clone it to your local machine. This will allow you to access and compare code snippets for the project on your local machine during the session. 
+The best way to use this repository during the session is to clone it to your local machine. This will allow you to access and compare code snippets for the project on your local machine during the session.
 
-## Here is what is included in this repo:
+## Here is what is included in this Repository
 
 1. [Prerequisites](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/prerequisites) - **Start here** to set up and install all of the prerequisites to develop a Flutter app.
 2. [The Slide Deck](https://github.com/donwardpeng/codemash_flutter_precompiler/tree/master/slidedeck) - Want to follow along at home? -> the entire slide deck used is here.
