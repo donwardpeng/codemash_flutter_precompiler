@@ -1,16 +1,9 @@
-# codemash_facedetect
+#Step by Step Codebase for the Precompiler Session
 
-A new Flutter project.
+This is the 'working' codebase for the precompiler session.
 
-## Getting Started
+## How to use this codebase
 
-This project is a starting point for a Flutter application.
+In the precompiler session, there are steps where code is added to the project. This repo contains directories ('Step 1', 'Step 2', etc.) corresponding to these steps with the associated completed code for that step.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Where it makes sense, the completed code is only a snippet of the code needed.
