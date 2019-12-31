@@ -28,6 +28,7 @@ dependencies:
   # firebase core is needed for any Firebase functionality to work
   firebase_core: ^0.4.0
   # firebase ml vision is needed for machine learning using Firebase 
+  # https://pub.dev/packages/firebase_ml_vision
   firebase_ml_vision: 0.9.3
 
   # The following adds the Cupertino Icons font to your application.

@@ -34,7 +34,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   File _imageFile;
   Size _imageSize;
-  dynamic _scanResults;
 
 /* _getAndScanImage method */
   Future<void> _getAndScanImage({bool selectedFromCamera}) async {
