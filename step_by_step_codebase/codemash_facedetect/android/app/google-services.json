@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "500573138852",
+    "firebase_url": "https://codemash-precompiler-dryrun.firebaseio.com",
+    "project_id": "codemash-precompiler-dryrun",
+    "storage_bucket": "codemash-precompiler-dryrun.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500573138852:android:6dae2d04b71514aff99b31",
+        "android_client_info": {
+          "package_name": "com.example.codemash_facedetect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500573138852-opljuge5rn4631719aelh10drv3b69np.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ4NSbb3v0c0NYzzQMYXPosAS7YOPBDPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500573138852-opljuge5rn4631719aelh10drv3b69np.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
