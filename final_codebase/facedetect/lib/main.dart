@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-    home: MyHomePage(title: 'Face Detection Demo'),
+      home: MyHomePage(title: 'Face Detection Demo'),
     );
   }
 }
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
       FaceDetectorOptions(
           mode: FaceDetectorMode.fast,
           enableLandmarks: true,
-          enableContours: true));
+          enableContours: false));
 
   // declare the screenshot controller to grab a screenshot of the screen when saving the image
   ScreenshotController screenshotController = ScreenshotController();
@@ -169,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // the build method to draw the entire screen
   @override
   Widget build(BuildContext context) {
-    Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
         ),

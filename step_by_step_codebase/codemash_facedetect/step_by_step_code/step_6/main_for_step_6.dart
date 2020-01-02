@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
       FaceDetectorOptions(
           mode: FaceDetectorMode.fast,
           enableLandmarks: true,
-          enableContours: true));
+          enableContours: false));
 
 /* _getAndScanImage method */
   Future<void> _getAndScanImage({bool selectedFromCamera}) async {
