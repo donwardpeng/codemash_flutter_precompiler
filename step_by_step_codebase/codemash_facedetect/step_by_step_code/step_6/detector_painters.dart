@@ -51,34 +51,26 @@ class FaceDetectorPainter extends CustomPainter {
       double leftThirdX = (baseOfNoseXShifted - leftSideOfFaceShifted) / 5.0;
       double thirdY = (bottomOfFaceShifted - baseOfNoseYShifted) / 4.0;
 
-
-        // draw the arc for the mustache to the right if the right eye is detected
-      if(rightEye != null) {
+      // draw the arc for the mustache to the right if the right eye is detected
+      if (rightEye != null) {
         Rect rightArc1BoundingBox = Rect.fromLTRB(
-            baseOfNoseXShifted, baseOfNoseYShifted,
+            baseOfNoseXShifted,
+            baseOfNoseYShifted,
             baseOfNoseXShifted + (2 * rightThirdX),
             baseOfNoseYShifted + thirdY);
 
-        canvas.drawArc(
-            rightArc1BoundingBox,
-            (0),
-            (pi),
-            false,
-            blackLine);
+        canvas.drawArc(rightArc1BoundingBox, (0), (pi), false, blackLine);
       }
 
       // draw the arc for the mustache to the left if the left eye is detected
       if (leftEye != null) {
         Rect leftArc1BoundingBox = Rect.fromLTRB(
-            baseOfNoseXShifted - (leftThirdX * 2), baseOfNoseYShifted,
-            baseOfNoseXShifted, baseOfNoseYShifted + thirdY);
+            baseOfNoseXShifted - (leftThirdX * 2),
+            baseOfNoseYShifted,
+            baseOfNoseXShifted,
+            baseOfNoseYShifted + thirdY);
 
-        canvas.drawArc(
-            leftArc1BoundingBox,
-            (0),
-            (pi),
-            false,
-            blackLine);
+        canvas.drawArc(leftArc1BoundingBox, (0), (pi), false, blackLine);
       }
 
       // draw the rectangle around the face

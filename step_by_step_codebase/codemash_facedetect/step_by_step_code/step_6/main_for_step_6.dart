@@ -119,22 +119,22 @@ class _MyHomePageState extends State<MyHomePage> {
       painter: painter,
     );
   }
-  
+
 /* _buildImage() method - build the image to display in body of the app */
   Widget _buildImage() {
     print('_buildImage method called');
     return Stack(children: <Widget>[
       Positioned.fill(
-          child: Container(
-        constraints: BoxConstraints.expand(),
-        decoration: BoxDecoration(
-          image: DecorationImage(
+        child: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+              image: DecorationImage(
             image: Image.file(_imageFile).image,
             fit: BoxFit.fitWidth,
           )),
           child: _imageSize == null || _scanResults == null
-            ? const Center(child: CircularProgressIndicator())
-            : _buildResults(_imageSize, _scanResults),
+              ? const Center(child: CircularProgressIndicator())
+              : _buildResults(_imageSize, _scanResults),
         ),
       ),
       Positioned(
@@ -164,46 +164,46 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: _imageFile == null
-            ? Center(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                    Container(
-                        padding: EdgeInsets.all(16),
-                        color: Colors.blue,
-                        constraints: BoxConstraints.expand(
-                            width: MediaQuery.of(context).size.width,
-                            height: 225),
-                        child: Column(children: <Widget>[
-                          Text('Detect Faces',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 32)),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                          ),
-                          RaisedButton(
-                              child: Text("Detect Faces from Gallery Image",
-                                  style: TextStyle(fontSize: 20)),
-                              onPressed: () {
-                                _getAndScanImage(selectedFromCamera: false);
-                              }),
-                          RaisedButton(
-                              child: Text("Detect Faces from Camera",
-                                  style: TextStyle(fontSize: 20)),
-                              onPressed: () {
-                                _getAndScanImage(selectedFromCamera: true);
-                              })
-                        ]))
-                  ]))
-            : _buildImage(),
-      );
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: _imageFile == null
+          ? Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                  Container(
+                      padding: EdgeInsets.all(16),
+                      color: Colors.blue,
+                      constraints: BoxConstraints.expand(
+                          width: MediaQuery.of(context).size.width,
+                          height: 225),
+                      child: Column(children: <Widget>[
+                        Text('Detect Faces',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 32)),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                        ),
+                        RaisedButton(
+                            child: Text("Detect Faces from Gallery Image",
+                                style: TextStyle(fontSize: 20)),
+                            onPressed: () {
+                              _getAndScanImage(selectedFromCamera: false);
+                            }),
+                        RaisedButton(
+                            child: Text("Detect Faces from Camera",
+                                style: TextStyle(fontSize: 20)),
+                            onPressed: () {
+                              _getAndScanImage(selectedFromCamera: true);
+                            })
+                      ]))
+                ]))
+          : _buildImage(),
+    );
   }
 
-   // clean up
+  // clean up
   @override
   void dispose() {
     _faceDetector.close();

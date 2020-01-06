@@ -1,6 +1,6 @@
 
 // Add this section under the buildTypes section in the Android/app/build.gradle file 
-// to add the Firebase V 
+// to add the Firebase Vision API
 dependencies {
         api 'com.google.firebase:firebase-ml-vision-image-label-model:17.0.2'
         api 'com.google.firebase:firebase-ml-vision-face-model:17.0.2'

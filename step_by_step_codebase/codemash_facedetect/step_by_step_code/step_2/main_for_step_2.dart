@@ -65,37 +65,33 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Center(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                    Container(
-                        padding: EdgeInsets.all(16),
-                        color: Colors.blue,
-                        constraints: BoxConstraints.expand(
-                            width: MediaQuery.of(context).size.width,
-                            height: 225),
-                        child: Column(children: <Widget>[
-                          Text('Detect Faces',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 32)),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                          ),
-                          RaisedButton(
-                              child: Text("Detect Faces from Gallery Image",
-                                  style: TextStyle(fontSize: 20)),
-                              onPressed: () {
-                                _getAndScanImage(selectedFromCamera: false);
-                              }),
-                          RaisedButton(
-                              child: Text("Detect Faces from Camera",
-                                  style: TextStyle(fontSize: 20)),
-                              onPressed: () {
-                                _getAndScanImage(selectedFromCamera: true);
-                              })
-                        ]))
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+              Container(
+                  padding: EdgeInsets.all(16),
+                  color: Colors.blue,
+                  constraints: BoxConstraints.expand(
+                      width: MediaQuery.of(context).size.width, height: 225),
+                  child: Column(children: <Widget>[
+                    Text('Detect Faces',
+                        style: TextStyle(color: Colors.white, fontSize: 32)),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    ),
+                    RaisedButton(
+                        child: Text("Detect Faces from Gallery Image",
+                            style: TextStyle(fontSize: 20)),
+                        onPressed: () {
+                          _getAndScanImage(selectedFromCamera: false);
+                        }),
+                    RaisedButton(
+                        child: Text("Detect Faces from Camera",
+                            style: TextStyle(fontSize: 20)),
+                        onPressed: () {
+                          _getAndScanImage(selectedFromCamera: true);
+                        })
                   ]))
-            
-      );
+            ])));
   }
 }

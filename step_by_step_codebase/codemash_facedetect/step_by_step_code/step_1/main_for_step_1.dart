@@ -28,7 +28,6 @@ class MyHomePage extends StatefulWidget {
 
 // State for the First Screen
 class _MyHomePageState extends State<MyHomePage> {
-
   // the build method to draw the entire screen
   @override
   Widget build(BuildContext context) {
@@ -37,36 +36,33 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Center(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                    Container(
-                        padding: EdgeInsets.all(16),
-                        color: Colors.blue,
-                        constraints: BoxConstraints.expand(
-                            width: MediaQuery.of(context).size.width,
-                            height: 225),
-                        child: Column(children: <Widget>[
-                          Text('Detect Faces',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 32)),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                          ),
-                          RaisedButton(
-                              child: Text("Detect Faces from Gallery Image",
-                                  style: TextStyle(fontSize: 20)),
-                              onPressed: () {
-                                // add code to handle detecting faces from the Gallery here
-                              }),
-                          RaisedButton(
-                              child: Text("Detect Faces from Camera",
-                                  style: TextStyle(fontSize: 20)),
-                              onPressed: () {
-                                // add code to handle detecting faces from the Camera here
-                              })
-                        ]))
-                  ]))            
-      );
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+              Container(
+                  padding: EdgeInsets.all(16),
+                  color: Colors.blue,
+                  constraints: BoxConstraints.expand(
+                      width: MediaQuery.of(context).size.width, height: 225),
+                  child: Column(children: <Widget>[
+                    Text('Detect Faces',
+                        style: TextStyle(color: Colors.white, fontSize: 32)),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    ),
+                    RaisedButton(
+                        child: Text("Detect Faces from Gallery Image",
+                            style: TextStyle(fontSize: 20)),
+                        onPressed: () {
+                          // add code to handle detecting faces from the Gallery here
+                        }),
+                    RaisedButton(
+                        child: Text("Detect Faces from Camera",
+                            style: TextStyle(fontSize: 20)),
+                        onPressed: () {
+                          // add code to handle detecting faces from the Camera here
+                        })
+                  ]))
+            ])));
   }
 }
