@@ -23,4 +23,4 @@ We will be learning how to use the Firebase MLKit Vision library during this ses
 
 ## Looking for the slide deck for the session?
 
-Head over <a href="https://drive.google.com/file/d/15kV-yAhFWhC1MIN5zIjlVC9eEbWCDAm3/view">here</>.
+Head over <a href="https://drive.google.com/file/d/15kV-yAhFWhC1MIN5zIjlVC9eEbWCDAm3/view">here</a>.
