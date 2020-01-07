@@ -21,4 +21,4 @@ We will be learning how to use the Firebase MLKit Vision library during this ses
 
 **Amazing!** You are all set and ready for the precompiler session!
 
-## <a href="https://drive.google.com/file/d/15kV-yAhFWhC1MIN5zIjlVC9eEbWCDAm3/view"The Slide Deck for the session can be found here</a>
+## <a href="https://drive.google.com/file/d/15kV-yAhFWhC1MIN5zIjlVC9eEbWCDAm3/view">The Slide Deck for the session can be found here</a>
