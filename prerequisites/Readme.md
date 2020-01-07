@@ -20,3 +20,7 @@ As part of the session, the app we will be building with require a free Google F
 We will be learning how to use the Firebase MLKit Vision library during this session. To get an idea of how powerful the Firebase MLKit Vision library is, check out the documentation [here](https://firebase.google.com/docs/ml-kit).
 
 **Amazing!** You are all set and ready for the precompiler session!
+
+## Looking for the slide deck for the session?
+
+Head over <a href="https://drive.google.com/file/d/15kV-yAhFWhC1MIN5zIjlVC9eEbWCDAm3/view">here</>.
